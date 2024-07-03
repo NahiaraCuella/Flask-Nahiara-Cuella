@@ -1,0 +1,7 @@
+{% block header %}
+<h1>{% block title %}Peliculas{% endblock %}</h1>
+{% endblock %} {% block content %} {% for p in film %}
+<h3>{{ p['title'] }}</h3>
+{% if not loop.last %}
+<hr />
+{% endif %} {% endfor %} {% endblock %}
