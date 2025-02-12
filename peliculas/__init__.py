@@ -17,4 +17,7 @@ app.register_blueprint(film.bp)
 from . import category
 app.register_blueprint(category.bp)
 
+from . import language
+app.register_blueprint(language.bp)
+
 
