@@ -3,7 +3,13 @@ import os
 import click
 from flask import current_app, g
 
+#arme la carpeta db_folder, ya que sino me tiraba un error y no lo podia correr.
 db_folder = current_app.instance_path 
+if not os.path.exists(db_folder):
+    os.makedirs(db_folder)
+
+
+db_folder = os.path.abspath(current_app.instance_path)
 db_name ='datos.sqlite'
 db_file = os.path.join(db_folder,db_name) 
 
