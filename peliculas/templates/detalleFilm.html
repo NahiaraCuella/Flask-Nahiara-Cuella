@@ -1,0 +1,9 @@
+{% block header %}
+<h1>{% block title %}Detalle de Peliculas{% endblock %}</h1>
+{% endblock %} {% block content %} 
+<h3>{{ film['title'] }}</h3>
+{% for dP in listaGeneros %}
+    <a href="{{ url_for('film.detalle', id=dP['idCat']) }}">{{ dP['Nombre'] }}</a>
+{% if not loop.last %}
+<hr />
+{% endif %} {% endfor %} {% endblock %}

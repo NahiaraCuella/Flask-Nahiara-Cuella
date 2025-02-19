@@ -1,7 +1,12 @@
 {% block header %}
 <h1>{% block title %}Actores{% endblock %}</h1>
 {% endblock %} {% block content %} {% for a in actor %}
-<h3>{{ a['first_name'] }} {{ a['last_name'] }}</h3>
+
+<a
+            class="action"
+            href="{{ url_for('actor.detalle', id=a['idActor']) }}"
+            >{{ a['first_name'] }} {{ a['last_name'] }}</a
+          >
 {% if not loop.last %}
 <hr />
 {% endif %} {% endfor %} {% endblock %}
